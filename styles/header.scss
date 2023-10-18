@@ -1,0 +1,21 @@
+.header_container {
+  .navigation {
+    background: #f9f9f9;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 185px;
+    padding: 35px 400px 45px 400px;
+    .logo_nav {
+      display: flex;
+      gap: 30px;
+    }
+    .ul_list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 70px;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.header_container .navigation {
+  background: #f9f9f9;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 185px;
+  padding: 35px 400px 45px 400px;
+}
+.header_container .navigation .logo_nav {
+  display: flex;
+  gap: 30px;
+}
+.header_container .navigation .ul_list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 70px;
+}
+
+*,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 1920px;
+  margin: auto auto;
+}
+
+/*# sourceMappingURL=final.css.map */
