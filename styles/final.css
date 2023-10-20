@@ -173,6 +173,111 @@
   opacity: 0.5;
   cursor: pointer;
 }
+.section_one .one_container .container_cards .card_item:hover P {
+  color: #ffffff;
+  z-index: 1;
+  position: absolute;
+}
+
+.container_two {
+  max-width: 1116px;
+  padding: 140px 0px 140px 0px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.container_two .content {
+  margin: 0;
+}
+.container_two .content h3 {
+  font-family: Lato;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 138%;
+  color: #bdbdbd;
+  margin-bottom: 40px;
+}
+.container_two .content img {
+  margin-bottom: 60px;
+}
+.container_two .content p {
+  margin: 0px 125px 80px 0px;
+  width: 445px;
+}
+.container_two .cards {
+  margin: 30px 0px 0px 0px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+.container_two .cards .card_item {
+  width: 255px;
+  height: 255px;
+  flex-shrink: 0;
+  background: #ebebeb;
+  position: relative;
+  transition: background-color 0.3s;
+}
+.container_two .cards .card_item .text_one {
+  margin: 30px 140px 32px 40px;
+  color: #000;
+  font-family: Lato;
+  font-size: 55px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: 5.5px;
+  text-transform: uppercase;
+}
+.container_two .cards .card_item .text_two {
+  margin: 0px 90px 47px 40px;
+  font-family: Lato;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18.48px;
+}
+.container_two .cards .card_item .text_three {
+  margin-left: 40px;
+  color: #005fa3;
+  border-bottom: 1px solid #005fa3;
+  width: 71px;
+}
+.container_two .cards .card_item .backround {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #005fa3;
+  transition: background-color 0.3s;
+  opacity: 0;
+}
+.container_two .cards .card_item:hover .backround {
+  opacity: 1;
+  cursor: pointer;
+  transition: ease 0.5s;
+}
+.container_two .cards .card_item:hover .text_one {
+  z-index: 1;
+  position: absolute;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+.container_two .cards .card_item:hover .text_two {
+  bottom: 47px;
+  z-index: 1;
+  position: absolute;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+.container_two .cards .card_item:hover .text_three {
+  z-index: 1;
+  position: absolute;
+  color: #ffffff;
+  border-color: #ffffff;
+  opacity: 1;
+  bottom: 25px;
+}
 
 *,
 body {

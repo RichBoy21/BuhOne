@@ -1,6 +1,11 @@
-import { navigation, presentation, section_one } from "./variables.js";
+import {
+  navigation,
+  presentation,
+  section_one,
+  section_two,
+} from "./variables.js";
 import { arr_nav, arr_presentation } from "./utils.js";
-import { cards_one } from "./cards.js";
+import { cards_one, cards_two } from "./cards.js";
 
 const frame = document.createElement("div");
 const cards = document.createElement("div");
@@ -56,6 +61,42 @@ function createSectionOne() {
 
   section_container.append(section_p, section_h2, container_cards);
   section_one.append(section_container);
+}
+function createSectionTwo() {
+  const section_container_two = document.createElement("div");
+  const section_content = document.createElement("div");
+  const section_cards = document.createElement("div");
+  const section_h3 = document.createElement("h3");
+  const section_img = document.createElement("img");
+  const section_p = document.createElement("p");
+
+  section_container_two.classList.add("container_two");
+  section_content.classList.add("content");
+  section_cards.classList.add("cards");
+
+  section_h3.innerText = "О нас";
+  section_img.src = "../images/section_two/Компания ИвановПром.svg";
+  section_p.innerText =
+    "Lorem Ipsum - это текст-, часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной  для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн.";
+
+  cards_two.forEach((card) => {
+    const cards_item_two = document.createElement("div");
+    const backround_two = document.createElement("div");
+    cards_item_two.classList.add("card_item");
+    backround_two.classList.add("backround");
+
+    backround_two.style.background = "#005FA3";
+    cards_item_two.innerHTML = `<p class="text_one">${card.number}</p>
+                                <p class="text_two">${card.title}</p>
+                                <p class="text_three">${card.text}</p>`;
+
+    cards_item_two.append(backround_two);
+    section_cards.append(cards_item_two);
+  });
+
+  section_content.append(section_h3, section_img, section_p);
+  section_container_two.append(section_content, section_cards);
+  section_two.append(section_container_two);
 }
 
 function createPresentation() {
@@ -137,4 +178,4 @@ function createNav() {
   navigation.append(div_logo, ul_list);
 }
 
-export { createNav, createPresentation, createSectionOne };
+export { createNav, createPresentation, createSectionOne, createSectionTwo };
