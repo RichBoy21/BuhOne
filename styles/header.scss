@@ -1,21 +1,116 @@
 .header_container {
+  background: #f9f9f9;
   .navigation {
-    background: #f9f9f9;
+    max-width: $maxWidth;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 185px;
-    padding: 35px 400px 45px 400px;
+    padding: 35px 0px 45px 0px;
     .logo_nav {
+      margin: 0;
       display: flex;
       gap: 30px;
     }
     .ul_list {
-      list-style: none;
+      margin-right: 0;
+      list-style: $listStyle;
       display: flex;
       flex-wrap: wrap;
       gap: 70px;
+    }
+  }
+}
+.header_presentation {
+  background: url("../images/header/Rectangle.svg");
+  height: 742px;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-size: 2125px;
+  .presentation {
+    max-width: 1116px;
+
+    .frame {
+      width: 500px;
+      height: 600px;
+      position: relative;
+      overflow: hidden;
+      margin: 0px;
+
+      .cards {
+        display: grid;
+        grid-auto-flow: column;
+        position: absolute;
+        transition: left 0.5s ease;
+        left: 0;
+        .card {
+          width: 500px;
+          height: 500px;
+          h1 {
+            padding: 170px 0 80px 0;
+            color: #fff;
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 138.27%;
+          }
+          p {
+            background-color: #005fa3;
+            text-align: center;
+            font-family: Lato;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 138%;
+            color: #fff;
+            padding: 18px 19px;
+            max-width: 270px;
+            margin-left: 0;
+            margin-bottom: 120px;
+          }
+        }
+      }
+    }
+    .trigger {
+      display: flex;
+      align-items: center;
+    }
+
+    .rounds {
+      margin: 0;
+      .slider_btn {
+        cursor: pointer;
+        margin-right: 40px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: none;
+        opacity: 0.3;
+      }
+      .slider_btn:hover {
+        opacity: 0.7;
+        width: 15px;
+        height: 15px;
+      }
+    }
+    .btn_box {
+      margin-right: 0;
+      .left_right_btn {
+        margin: 0;
+        width: 60px;
+        height: 60px;
+        font-size: 25px;
+        opacity: 1.5;
+        cursor: pointer;
+        transition: opacity 0.4s;
+        background-color: rgba(255, 252, 252, 0.3);
+        color: #d3cccc;
+        border: none;
+      }
+      .left_right_btn:hover {
+        opacity: 0.3;
+      }
     }
   }
 }
