@@ -1,13 +1,15 @@
 .header_container {
   background: #f9f9f9;
+
   .navigation {
     max-width: $maxWidth;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
+    justify-content: space-between;
     gap: 185px;
     padding: 35px 0px 45px 0px;
+    margin: auto auto;
     .logo_nav {
       margin: 0;
       display: flex;
@@ -30,6 +32,7 @@
   background-size: 2125px;
   .presentation {
     max-width: 1116px;
+    margin: auto auto;
 
     .frame {
       width: 500px;
@@ -75,6 +78,7 @@
     .trigger {
       display: flex;
       align-items: center;
+      justify-content: space-between;
     }
 
     .rounds {

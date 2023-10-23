@@ -3,34 +3,15 @@ import {
   presentation,
   section_one,
   section_two,
+  section_three,
 } from "./variables.js";
-import { arr_nav, arr_presentation } from "./utils.js";
+import { arr_nav, arr_presentation, arr_section_three } from "./utils.js";
 import { cards_one, cards_two } from "./cards.js";
 
-const frame = document.createElement("div");
 const cards = document.createElement("div");
 const triggers = document.createElement("div");
-const buttons = document.createElement("div");
-buttons.classList.add("btn_box");
-
-const left_btn = document.createElement("button");
-const right_btn = document.createElement("button");
 
 let slider_index = 0;
-
-left_btn.innerText = "<";
-right_btn.innerText = ">";
-left_btn.classList.add("left_right_btn");
-right_btn.classList.add("left_right_btn");
-
-triggers.classList.add("trigger");
-frame.classList.add("frame");
-cards.classList.add("cards");
-
-buttons.append(left_btn, right_btn);
-triggers.append(buttons);
-frame.append(cards);
-presentation.append(frame, triggers);
 
 function createSectionOne() {
   const section_container = document.createElement("div");
@@ -99,6 +80,54 @@ function createSectionTwo() {
   section_two.append(section_container_two);
 }
 
+function createSectionThree() {
+  const section_container_three = document.createElement("div");
+  const section_container_frame = document.createElement("div");
+  const section_container_content = document.createElement("div");
+  const section_container_btns = document.createElement("div");
+
+  const section_h2_three = document.createElement("h2");
+  const section_h3_three = document.createElement("h3");
+
+  section_container_three.classList.add("container");
+  section_container_content.classList.add("content");
+  section_container_btns.classList.add("btns");
+  section_container_frame.classList.add("frame");
+
+  section_h2_three.innerText = "Наши клиенты";
+  section_h3_three.innerText = "С нами работают";
+
+  arr_section_three.forEach((image) => {
+    const img_cards = document.createElement("div");
+    img_cards.classList.add("cards_img");
+    img_cards.innerHTML = `<img src="${image.img}" alt="">
+                            <img src="${image.img1}" alt="">
+                            <img src="${image.img2}" alt="">
+                            <img src="${image.img3}" alt="">`;
+    section_container_content.append(img_cards);
+  });
+
+  section_container_frame.append(section_container_content);
+  section_container_three.append(
+    section_h2_three,
+    section_h3_three,
+    section_container_frame,
+    section_container_btns
+  );
+  section_three.append(section_container_three);
+
+  createButtons(
+    arr_section_three,
+    section_container_btns,
+    section_container_content
+  );
+  create_round(
+    arr_section_three,
+    section_container_btns,
+    section_container_content
+  );
+}
+
 function createPresentation() {
   arr_presentation.forEach((objInfo) => {
     const card = document.createElement("div");
@@ -107,11 +136,66 @@ function createPresentation() {
                     <p>${objInfo.paragraph}</p>`;
     cards.append(card);
   });
-  buttonsRightLeft(arr_presentation);
-  create_round(arr_presentation);
+  buttonsRightLeft(arr_presentation, presentation, cards);
+  create_round_header(arr_presentation, triggers, cards);
 }
 
-function buttonsRightLeft(array) {
+function createButtons(array, parents_element, card) {
+  const btns_container = document.createElement("div");
+
+  const left_btn_one = document.createElement("button");
+  const right_btn_two = document.createElement("button");
+
+  left_btn_one.innerText = "<";
+  right_btn_two.innerText = ">";
+  left_btn_one.classList.add("left_right_btn");
+  right_btn_two.classList.add("left_right_btn");
+
+  btns_container.append(left_btn_one, right_btn_two);
+  parents_element.append(btns_container);
+
+  function go_left() {
+    if (slider_index !== 0) {
+      slider_index--;
+      card.style.left = `${-1 * slider_index * 1090}px`;
+    }
+  }
+
+  function go_right() {
+    if (slider_index < array.length - 1) {
+      slider_index++;
+      card.style.left = `${-1 * slider_index * 1090}px`;
+    }
+  }
+
+  left_btn_one.addEventListener("click", go_left);
+  right_btn_two.addEventListener("click", go_right);
+}
+
+function buttonsRightLeft(array, parentElement, cards) {
+  const frame = document.createElement("div");
+
+  const buttons = document.createElement("div");
+
+  buttons.classList.add("btn_box");
+
+  const left_btn = document.createElement("button");
+  const right_btn = document.createElement("button");
+
+  left_btn.innerText = "<";
+  right_btn.innerText = ">";
+  left_btn.classList.add("left_right_btn");
+  right_btn.classList.add("left_right_btn");
+
+  triggers.classList.add("trigger");
+  frame.classList.add("frame");
+  cards.classList.add("cards");
+
+  buttons.append(left_btn, right_btn);
+  triggers.append(buttons);
+  frame.append(cards);
+  parentElement.append(frame, triggers);
+
   left_btn.addEventListener("click", go_left);
   right_btn.addEventListener("click", go_right);
 
@@ -121,6 +205,7 @@ function buttonsRightLeft(array) {
       cards.style.left = `${-1 * slider_index * 500}px`;
     }
   }
+
   function go_right() {
     if (slider_index < array.length - 1) {
       slider_index++;
@@ -129,7 +214,7 @@ function buttonsRightLeft(array) {
   }
 }
 
-function create_round(array) {
+function create_round_header(array, parent_element, cards) {
   const container = document.createElement("div");
   container.classList.add("rounds");
 
@@ -151,7 +236,32 @@ function create_round(array) {
       button.classList.add("active");
     });
   });
-  triggers.prepend(container);
+  parent_element.prepend(container);
+}
+
+function create_round(array, parent_element, cards) {
+  const container = document.createElement("div");
+  container.classList.add("rounds");
+
+  array.forEach((_, ind) => {
+    const button = document.createElement("button");
+    button.classList.add("slider_btn");
+    container.append(button);
+
+    button.addEventListener("click", () => {
+      slider_index = ind;
+      cards.style.left = `${-1 * slider_index * 1090}px`;
+
+      const all_button = button.parentElement.children;
+
+      Array.from(all_button).forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      button.classList.add("active");
+    });
+  });
+  parent_element.prepend(container);
 }
 
 function createNav() {
@@ -178,4 +288,10 @@ function createNav() {
   navigation.append(div_logo, ul_list);
 }
 
-export { createNav, createPresentation, createSectionOne, createSectionTwo };
+export {
+  createNav,
+  createPresentation,
+  createSectionOne,
+  createSectionTwo,
+  createSectionThree,
+};

@@ -2,6 +2,7 @@
 @import "header";
 @import "section_one";
 @import "section_two";
+@import "section_three";
 
 *,
 body {
@@ -9,5 +10,4 @@ body {
   padding: 0;
   box-sizing: border-box;
   max-width: 1920px;
-  margin: auto auto;
 }

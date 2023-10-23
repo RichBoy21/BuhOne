@@ -23,4 +23,31 @@ const arr_presentation = [
   },
 ];
 
-export { arr_nav, arr_presentation };
+const arr_section_three = [
+  {
+    img: "./images/section_three/Rectangle 2.2.svg",
+    img1: "./images/section_three/Rectangle 2.2.svg",
+    img2: "./images/section_three/Rectangle 2.2.svg",
+    img3: "./images/section_three/Rectangle 2.2.svg",
+  },
+  {
+    img: "./images/section_three/Google_icon-icons.com_66937.svg",
+    img1: "./images/section_three/Google_icon-icons.com_66937.svg",
+    img2: "./images/section_three/Google_icon-icons.com_66937.svg",
+    img3: "./images/section_three/Google_icon-icons.com_66937.svg",
+  },
+  {
+    img: "./images/section_three/Rectangle 2.2.svg",
+    img1: "./images/section_three/Rectangle 2.2.svg",
+    img2: "./images/section_three/Rectangle 2.2.svg",
+    img3: "./images/section_three/Rectangle 2.2.svg",
+  },
+  {
+    img: "./images/section_three/Google_icon-icons.com_66937.svg",
+    img1: "./images/section_three/Google_icon-icons.com_66937.svg",
+    img2: "./images/section_three/Google_icon-icons.com_66937.svg",
+    img3: "./images/section_three/Google_icon-icons.com_66937.svg",
+  },
+];
+
+export { arr_nav, arr_presentation, arr_section_three };
