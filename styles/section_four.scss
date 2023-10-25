@@ -1,0 +1,126 @@
+.section_four {
+  .container_four {
+    max-width: 1116px;
+    padding: 140px 0px 140px 0px;
+    margin: auto auto;
+    h2 {
+      font-family: Lato;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 138%;
+      color: #bdbdbd;
+      margin-bottom: 40px;
+    }
+    .text_content {
+      font-family: Merriweather;
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 144.555%;
+      color: #333;
+      margin-bottom: 80px;
+    }
+    .frame {
+      background-color: #ebebeb;
+      height: 320px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 50px;
+      .content {
+        display: grid;
+        grid-auto-flow: column;
+        position: absolute;
+        transition: left 0.5s ease;
+        left: 0;
+        gap: 100px;
+        .cards_item {
+          width: 1000px;
+          height: 250px;
+          gap: 25px;
+
+          .content_p {
+            color: #000;
+            font-family: Lato;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 138%;
+            padding: 45px 95px 58px;
+          }
+          .info {
+            display: flex;
+            max-width: 1116px;
+            margin-left: 95px;
+
+            img {
+              width: 80px;
+              height: 80px;
+              border-radius: 50%;
+              margin: 0px 35px 45px 0px;
+            }
+            .contact {
+              margin-top: 10px;
+              .name {
+                color: #000;
+
+                font-family: Lato;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 900;
+                line-height: 138%;
+              }
+              .firma {
+                font-family: Lato;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 138%;
+                color: #4f4f4f;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.btns {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+  .rounds {
+    display: flex;
+    align-items: flex-end;
+    .slider_btn {
+      cursor: pointer;
+      margin-right: 40px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: none;
+      opacity: 0.3;
+      background-color: #005fa3;
+    }
+    .slider_btn:hover {
+      opacity: 0.7;
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+.left_right_btn {
+  margin: 0;
+  width: 60px;
+  height: 60px;
+  font-size: 25px;
+  opacity: 1.5;
+  cursor: pointer;
+  transition: opacity 0.4s;
+  background-color: #005fa3;
+  color: #d3cccc;
+  border: none;
+}
+.left_right_btn:hover {
+  opacity: 0.3;
+}

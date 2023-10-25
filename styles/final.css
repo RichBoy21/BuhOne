@@ -301,7 +301,7 @@
   color: #bdbdbd;
   margin-bottom: 40px;
 }
-.section_three .container h3 {
+.section_three .container p {
   font-family: Merriweather;
   font-size: 48px;
   font-style: normal;
@@ -373,6 +373,274 @@
 }
 .section_three .container .left_right_btn:hover {
   opacity: 0.3;
+}
+
+.section_four .container_four {
+  max-width: 1116px;
+  padding: 140px 0px 140px 0px;
+  margin: auto auto;
+}
+.section_four .container_four h2 {
+  font-family: Lato;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 138%;
+  color: #bdbdbd;
+  margin-bottom: 40px;
+}
+.section_four .container_four .text_content {
+  font-family: Merriweather;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 144.555%;
+  color: #333;
+  margin-bottom: 80px;
+}
+.section_four .container_four .frame {
+  background-color: #ebebeb;
+  height: 320px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+.section_four .container_four .frame .content {
+  display: grid;
+  grid-auto-flow: column;
+  position: absolute;
+  transition: left 0.5s ease;
+  left: 0;
+  gap: 100px;
+}
+.section_four .container_four .frame .content .cards_item {
+  width: 1000px;
+  height: 250px;
+  gap: 25px;
+}
+.section_four .container_four .frame .content .cards_item .content_p {
+  color: #000;
+  font-family: Lato;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 138%;
+  padding: 45px 95px 58px;
+}
+.section_four .container_four .frame .content .cards_item .info {
+  display: flex;
+  max-width: 1116px;
+  margin-left: 95px;
+}
+.section_four .container_four .frame .content .cards_item .info img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0px 35px 45px 0px;
+}
+.section_four .container_four .frame .content .cards_item .info .contact {
+  margin-top: 10px;
+}
+.section_four .container_four .frame .content .cards_item .info .contact .name {
+  color: #000;
+  font-family: Lato;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 138%;
+}
+.section_four .container_four .frame .content .cards_item .info .contact .firma {
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 138%;
+  color: #4f4f4f;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+.btns .rounds {
+  display: flex;
+  align-items: flex-end;
+}
+.btns .rounds .slider_btn {
+  cursor: pointer;
+  margin-right: 40px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  opacity: 0.3;
+  background-color: #005fa3;
+}
+.btns .rounds .slider_btn:hover {
+  opacity: 0.7;
+  width: 15px;
+  height: 15px;
+}
+
+.left_right_btn {
+  margin: 0;
+  width: 60px;
+  height: 60px;
+  font-size: 25px;
+  opacity: 1.5;
+  cursor: pointer;
+  transition: opacity 0.4s;
+  background-color: #005fa3;
+  color: #d3cccc;
+  border: none;
+}
+
+.left_right_btn:hover {
+  opacity: 0.3;
+}
+
+.footer_container .footer_contacts {
+  background-image: url("../images/footer/Rectangle.svg");
+}
+.footer_container .footer_contacts .footer_contacts_box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+  max-width: 1116px;
+  margin: auto auto;
+  padding: 120px 0px 190px;
+}
+.footer_container .footer_contacts .footer_contacts_box .footer_title {
+  color: #fff;
+  font-family: Merriweather;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 144.555%;
+  margin-bottom: 60px;
+}
+.footer_container .footer_contacts .footer_contacts_box .footer_text {
+  color: #fff;
+  font-family: Lato;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 138%;
+  max-width: 445px;
+  margin-bottom: 80px;
+}
+.footer_container .footer_contacts .footer_contacts_box .footer_info_box {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.footer_container .footer_contacts .footer_contacts_box .footer_info_box .footer_info_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.footer_container .footer_contacts .footer_contacts_box .footer_info_box .footer_info_container .info_p {
+  color: #fff;
+  font-family: Lato;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 138%;
+}
+.footer_container .footer_contacts .footer_contacts_box .footer_box_right {
+  position: relative;
+}
+.footer_container .footer_contacts .footer_contacts_box .footer_box_right .inputs_container {
+  display: flex;
+  gap: 30px;
+}
+.footer_container .footer_contacts .footer_contacts_box .footer_box_right .inputs_container label {
+  color: #fff;
+  font-family: Lato;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 138%;
+}
+.footer_container .footer_contacts .footer_contacts_box .footer_box_right .inputs_container label input {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  border-bottom: 1px solid #fff;
+  width: 255px;
+  margin-top: 15px;
+  padding: 15px 0px 15px 0px;
+  font-size: 21px;
+  color: #fff;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 138%;
+  font-family: Lato;
+  margin-bottom: 35px;
+}
+.footer_container .footer_contacts .footer_contacts_box .footer_box_right .inputs_container label input::placeholder {
+  color: #bdbdbd;
+  font-family: Lato;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 138%;
+}
+.footer_container .footer_contacts .footer_contacts_box .footer_box_right label {
+  color: #fff;
+  font-family: Lato;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 138%;
+}
+.footer_container .footer_contacts .footer_contacts_box .footer_box_right label input {
+  margin-top: 15px;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  border-bottom: 1px solid #fff;
+  width: 540px;
+  padding: 15px 0px 84px 0px;
+  font-size: 21px;
+  color: #fff;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 138%;
+  font-family: Lato;
+}
+.footer_container .footer_contacts .footer_contacts_box .footer_box_right label input::placeholder {
+  color: #bdbdbd;
+  font-family: Lato;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 138%;
+}
+.footer_container .footer_contacts .footer_contacts_box .footer_box_right button {
+  color: #fff;
+  background-color: #005fa3;
+  width: 270px;
+  height: 60px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 0px;
+  bottom: -140px;
+}
+.footer_container .footer_policy {
+  max-width: 1116px;
+  margin: 50px auto 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.footer_container .footer_policy .policy_text {
+  color: #000;
+  text-align: right;
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 138%;
 }
 
 *,

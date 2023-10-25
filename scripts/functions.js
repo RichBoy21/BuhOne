@@ -4,8 +4,16 @@ import {
   section_one,
   section_two,
   section_three,
+  section_four,
+  footer_container,
 } from "./variables.js";
-import { arr_nav, arr_presentation, arr_section_three } from "./utils.js";
+import {
+  arr_nav,
+  arr_presentation,
+  arr_section_three,
+  arr_section_four,
+  footer_info,
+} from "./utils.js";
 import { cards_one, cards_two } from "./cards.js";
 
 const cards = document.createElement("div");
@@ -87,7 +95,7 @@ function createSectionThree() {
   const section_container_btns = document.createElement("div");
 
   const section_h2_three = document.createElement("h2");
-  const section_h3_three = document.createElement("h3");
+  const section_p_three = document.createElement("p");
 
   section_container_three.classList.add("container");
   section_container_content.classList.add("content");
@@ -95,7 +103,7 @@ function createSectionThree() {
   section_container_frame.classList.add("frame");
 
   section_h2_three.innerText = "Наши клиенты";
-  section_h3_three.innerText = "С нами работают";
+  section_p_three.innerText = "С нами работают";
 
   arr_section_three.forEach((image) => {
     const img_cards = document.createElement("div");
@@ -110,7 +118,7 @@ function createSectionThree() {
   section_container_frame.append(section_container_content);
   section_container_three.append(
     section_h2_three,
-    section_h3_three,
+    section_p_three,
     section_container_frame,
     section_container_btns
   );
@@ -123,6 +131,59 @@ function createSectionThree() {
   );
   create_round(
     arr_section_three,
+    section_container_btns,
+    section_container_content
+  );
+}
+
+function createSectionFour() {
+  const section_container_four = document.createElement("div");
+  const section_h2_three = document.createElement("h2");
+  const section_p_three = document.createElement("p");
+
+  const section_container_frame = document.createElement("div");
+  const section_container_content = document.createElement("div");
+  const section_container_btns = document.createElement("div");
+
+  section_container_four.classList.add("container_four");
+  section_container_content.classList.add("content");
+  section_container_btns.classList.add("btns");
+  section_container_frame.classList.add("frame");
+  section_p_three.classList.add("text_content");
+
+  section_h2_three.innerText = "Отзывы";
+  section_p_three.innerText = "Ваши благодарности";
+
+  arr_section_four.forEach((item) => {
+    const item_cards = document.createElement("div");
+    item_cards.classList.add("cards_item");
+    item_cards.innerHTML = `<p class="content_p">${item.content}</p>
+                          <div class="info">
+                              <img src="${item.img}" alt="">
+                            <div class="contact">
+                              <p class="name">${item.name}</p>
+                              <p class="firma">${item.firma}</p>
+                            </div>
+                          </div>`;
+    section_container_content.append(item_cards);
+  });
+
+  section_container_frame.append(section_container_content);
+  section_container_four.append(
+    section_h2_three,
+    section_p_three,
+    section_container_frame,
+    section_container_btns
+  );
+  section_four.append(section_container_four);
+
+  createButtons(
+    arr_section_four,
+    section_container_btns,
+    section_container_content
+  );
+  create_round(
+    arr_section_four,
     section_container_btns,
     section_container_content
   );
@@ -288,10 +349,126 @@ function createNav() {
   navigation.append(div_logo, ul_list);
 }
 
+function createFooter() {
+  const footer_contacts = document.createElement("div");
+  footer_contacts.classList.add("footer_contacts");
+
+  const footer_contacts_box = document.createElement("div");
+  footer_contacts_box.classList.add("footer_contacts_box");
+
+  const footer_box_left = createFooterTextInfo();
+  const footer_box_right = createFooterInputs();
+
+  footer_contacts_box.append(footer_box_left, footer_box_right);
+  footer_contacts.append(footer_contacts_box);
+  footer_container.append(footer_contacts, createFooterPolicy());
+}
+
+function createFooterTextInfo() {
+  const footer_box_left = document.createElement("div");
+  footer_box_left.classList.add("footer_box_left");
+
+  const footer_title = document.createElement("h2");
+  footer_title.classList.add("footer_title");
+
+  const footer_text = document.createElement("p");
+  footer_text.classList.add("footer_text");
+
+  const footer_info_box = createFooterInfoBox();
+
+  footer_title.innerText = "Связь с нами";
+  footer_text.innerText =
+    "У вас остались вопросы? Напишите нам - мы ответим в ближайшее время!";
+
+  footer_box_left.append(footer_title, footer_text, footer_info_box);
+  return footer_box_left;
+}
+
+function createFooterInfoBox() {
+  const footer_info_box = document.createElement("div");
+  footer_info_box.classList.add("footer_info_box");
+
+  footer_info.forEach((el) => {
+    const footer_info_container = document.createElement("div");
+    footer_info_container.classList.add("footer_info_container");
+    footer_info_container.innerHTML = `<img src="${el.logo}">
+                                        <p class="info_p">${el.content}</p>`;
+    footer_info_box.append(footer_info_container);
+  });
+  return footer_info_box;
+}
+
+function createFooterInputs() {
+  const footer_box_right = document.createElement("div");
+  footer_box_right.classList.add("footer_box_right");
+
+  const inputs_container = document.createElement("div");
+  inputs_container.classList.add("inputs_container");
+
+  const input_name = document.createElement("input");
+  input_name.classList.add("input_name");
+
+  const input_lastname = document.createElement("input");
+  input_name.classList.add("input_lastname");
+
+  const input_message = document.createElement("input");
+  input_name.classList.add("input_massage");
+
+  const label_name = document.createElement("label");
+  input_name.classList.add("label_name");
+
+  const label_lastname = document.createElement("label");
+  input_name.classList.add("label_lastname");
+
+  const label_message = document.createElement("label");
+  input_name.classList.add("label_message");
+
+  const btn = createButton();
+
+  label_name.innerHTML = "Имя<br>";
+  label_lastname.innerHTML = "Фамилия<br>";
+  label_message.innerHTML = "Сообщение<br>";
+
+  input_name.setAttribute("placeholder", "Иван");
+  input_lastname.setAttribute("placeholder", "Иванов");
+  input_message.setAttribute("placeholder", "Ваше сообщение");
+
+  label_name.append(input_name);
+  label_lastname.append(input_lastname);
+  label_message.append(input_message);
+  inputs_container.append(label_name, label_lastname);
+  footer_box_right.append(inputs_container, label_message, btn);
+  return footer_box_right;
+}
+
+function createButton() {
+  const btn = document.createElement("button");
+  btn.innerText = "Отправить сообщение";
+  return btn;
+}
+
+function createFooterPolicy() {
+  const footer_policy = document.createElement("div");
+  footer_policy.classList.add("footer_policy");
+
+  const policy_text_one = document.createElement("p");
+  policy_text_one.classList.add("policy_text");
+
+  const policy_text_two = document.createElement("p");
+  policy_text_two.classList.add("policy_text");
+
+  policy_text_one.innerText = "2019 (с) Все права защищены. БухОне.ру";
+  policy_text_two.innerText = "Разработано: BuhOne";
+  footer_policy.append(policy_text_one, policy_text_two);
+  return footer_policy;
+}
+
 export {
   createNav,
   createPresentation,
   createSectionOne,
   createSectionTwo,
   createSectionThree,
+  createSectionFour,
+  createFooter,
 };
